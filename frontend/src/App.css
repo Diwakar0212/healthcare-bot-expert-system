@@ -31,6 +31,12 @@
   gap: 15px;
 }
 
+.header-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
 .logo-container {
   display: flex;
   align-items: center;
@@ -56,7 +62,9 @@
   margin: 2px 0 0 0;
 }
 
-.reset-button {
+.reset-button,
+.logout-button,
+.history-button {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -72,18 +80,42 @@
   box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
 }
 
-.reset-button:hover {
+.reset-button:hover,
+.logout-button:hover,
+.history-button:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
 }
 
-.reset-button:active {
+.reset-button:active,
+.logout-button:active,
+.history-button:active {
   transform: translateY(0);
 }
 
-.reset-button svg {
+.reset-button svg,
+.logout-button svg,
+.history-button svg {
   width: 20px;
   height: 20px;
+}
+
+.logout-button {
+  background: linear-gradient(135deg, #fc8181 0%, #f56565 100%);
+  box-shadow: 0 4px 15px rgba(252, 129, 129, 0.3);
+}
+
+.logout-button:hover {
+  box-shadow: 0 6px 20px rgba(252, 129, 129, 0.4);
+}
+
+.history-button {
+  background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+  box-shadow: 0 4px 15px rgba(72, 187, 120, 0.3);
+}
+
+.history-button:hover {
+  box-shadow: 0 6px 20px rgba(72, 187, 120, 0.4);
 }
 
 .app-main {
@@ -152,8 +184,17 @@
     align-items: flex-start;
   }
 
-  .reset-button {
+  .header-actions {
     width: 100%;
+    justify-content: space-between;
+  }
+
+  .reset-button,
+  .logout-button,
+  .history-button {
+    flex: 1;
     justify-content: center;
+    padding: 8px 12px;
+    font-size: 13px;
   }
 }

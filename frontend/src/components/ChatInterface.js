@@ -5,7 +5,7 @@ import './ChatInterface.css';
 
 const API_BASE_URL = 'http://localhost:5000/api';
 
-function ChatInterface({ sessionId }) {
+function ChatInterface({ sessionId, username }) {
   const [messages, setMessages] = useState([]);
   const [inputValue, setInputValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -43,7 +43,8 @@ function ChatInterface({ sessionId }) {
     try {
       const response = await axios.post(`${API_BASE_URL}/chat`, {
         session_id: sessionId,
-        message: messageText
+        message: messageText,
+        username: username  // Send username for history tracking
       });
 
       const botMessage = {
