@@ -1,0 +1,272 @@
+.message {
+  display: flex;
+  gap: 12px;
+  animation: slideIn 0.3s ease-out;
+  max-width: 85%;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.bot-message {
+  align-self: flex-start;
+}
+
+.user-message {
+  align-self: flex-end;
+  flex-direction: row-reverse;
+}
+
+.message-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.bot-avatar {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.user-avatar {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+}
+
+.message-avatar svg {
+  width: 24px;
+  height: 24px;
+}
+
+.message-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.message-text {
+  padding: 14px 18px;
+  border-radius: 18px;
+  line-height: 1.5;
+  font-size: 15px;
+  word-wrap: break-word;
+}
+
+.bot-message .message-text {
+  background: #f7fafc;
+  color: #2d3748;
+  border-bottom-left-radius: 4px;
+}
+
+.user-message .message-text {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-bottom-right-radius: 4px;
+}
+
+.message-text strong {
+  font-weight: 700;
+}
+
+.message-time {
+  font-size: 11px;
+  color: #a0aec0;
+  padding: 0 8px;
+}
+
+.user-message .message-time {
+  text-align: right;
+}
+
+/* Diagnosis Styles */
+.diagnosis-container {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.diagnosis-title {
+  font-size: 16px;
+  color: #2d3748;
+  margin: 0;
+  padding: 8px 12px;
+  background: #edf2f7;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+.diagnosis-card {
+  background: white;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 16px;
+  transition: all 0.3s ease;
+}
+
+.diagnosis-card:hover {
+  border-color: #667eea;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.1);
+}
+
+.diagnosis-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.diagnosis-rank {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.diagnosis-condition {
+  flex: 1;
+  font-size: 17px;
+  color: #2d3748;
+  margin: 0;
+  font-weight: 700;
+}
+
+.diagnosis-confidence {
+  background: #48bb78;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.diagnosis-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.diagnosis-section {
+  font-size: 14px;
+  color: #4a5568;
+  line-height: 1.6;
+}
+
+.diagnosis-section strong {
+  display: block;
+  color: #2d3748;
+  margin-bottom: 6px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.diagnosis-section p {
+  margin: 0;
+}
+
+.symptoms-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.symptom-tag {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.symptom-tag.matched {
+  background: #c6f6d5;
+  color: #22543d;
+}
+
+.confidence-bar {
+  height: 6px;
+  background: #e2e8f0;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-top: 12px;
+}
+
+.confidence-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #48bb78 0%, #38a169 100%);
+  transition: width 0.6s ease;
+  border-radius: 3px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .message {
+    max-width: 90%;
+  }
+
+  .message-avatar {
+    width: 36px;
+    height: 36px;
+  }
+
+  .message-avatar svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .message-text {
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+
+  .diagnosis-card {
+    padding: 14px;
+  }
+
+  .diagnosis-condition {
+    font-size: 15px;
+  }
+
+  .diagnosis-section {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .message {
+    max-width: 95%;
+  }
+
+  .diagnosis-header {
+    flex-wrap: wrap;
+  }
+
+  .diagnosis-confidence {
+    font-size: 12px;
+    padding: 3px 10px;
+  }
+}
