@@ -9,7 +9,9 @@ A full-stack expert system chatbot that diagnoses medical conditions based on sy
 - **Intelligent Symptom Extraction**: NLP-based symptom recognition from natural language
 - **Confidence Scoring**: Calculates match confidence for each potential diagnosis
 - **Interactive Chat Interface**: Modern React-based UI with real-time responses
-- **Session Management**: Maintains conversation context and history
+- **User Authentication**: Login/signup system with secure session management
+- **Consultation History**: Track and review past diagnoses and recommendations
+- **Session Management**: Maintains conversation context throughout diagnosis
 - **Responsive Design**: Works seamlessly on desktop and mobile devices
 
 ## 🏗️ Architecture
@@ -38,13 +40,13 @@ A full-stack expert system chatbot that diagnoses medical conditions based on sy
 
 1. Navigate to the backend directory:
 ```powershell
-cd "c:\Users\diwakar\Documents\PBL\5th Sem PBL\HealthCare BOT\backend"
+cd backend
 ```
 
-2. Create a virtual environment (optional but recommended):
+2. Create a virtual environment (recommended):
 ```powershell
-python -m venv venv
-.\venv\Scripts\Activate
+python -m venv .venv
+.\.venv\Scripts\Activate
 ```
 
 3. Install dependencies:
@@ -63,7 +65,7 @@ The backend server will start at `http://localhost:5000`
 
 1. Open a new terminal and navigate to the frontend directory:
 ```powershell
-cd "c:\Users\diwakar\Documents\PBL\5th Sem PBL\HealthCare BOT\frontend"
+cd frontend
 ```
 
 2. Install dependencies:
@@ -123,13 +125,15 @@ def calculate_match_score(user_symptoms, rule):
 ## 📁 Project Structure
 
 ```
-HealthCare BOT/
+healthcare-bot-expert-system/
 │
 ├── backend/
 │   ├── app.py                 # Flask application & API endpoints
 │   ├── expert_system.py       # Main expert system logic
 │   ├── knowledge_base.py      # Medical knowledge base
 │   ├── inference_engine.py    # Forward chaining algorithm
+│   ├── user_database.py       # User authentication & history
+│   ├── users_db.json          # User data storage
 │   └── requirements.txt       # Python dependencies
 │
 └── frontend/
@@ -140,7 +144,13 @@ HealthCare BOT/
     │   │   ├── ChatInterface.js    # Main chat component
     │   │   ├── ChatInterface.css
     │   │   ├── Message.js          # Message display component
-    │   │   └── Message.css
+    │   │   ├── Message.css
+    │   │   ├── LoginPage.js        # User login/signup
+    │   │   ├── LoginPage.css
+    │   │   ├── HistoryPage.js      # Consultation history
+    │   │   └── HistoryPage.css
+    │   ├── contexts/
+    │   │   └── AuthContext.js      # Authentication context
     │   ├── App.js                  # Root component
     │   ├── App.css
     │   ├── index.js
